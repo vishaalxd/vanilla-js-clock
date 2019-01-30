@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<bodY>
+<div class="title">Vanilla JS Clock Work.</div>
+<div class="js-clock">
+    <div class="hour hand"></div>
+    <div class="min hand"></div>
+    <div class="sec hand"></div>
+</div>
+
+
+<script>
+hh = document.querySelector(".hour");
+sh = document.querySelector(".sec");
+mh = document.querySelector(".min");
+
+function setDate(){
+    let hour = new Date().getHours();
+    let min = new Date().getMinutes();
+    let sec = new Date().getSeconds();
+    console.log(hour + ":" +  min + ":" + sec);
+
+    // secDegree =;
+    sh.style.transform = `rotate(${ ((90 + (sec / 60) * 360)) }deg)`; //calculating degree per sec;
+    mh.style.transform = `rotate(${ 90 + ((min / 60) * 360) }deg)`;  
+    hh.style.transform = `rotate(${ 90 + ((hour / 60) * 360) }deg)`;   
+}
+
+setInterval(setDate, 1000);
+
+</script>
+</bodY>
+</html>
